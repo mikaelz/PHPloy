@@ -171,7 +171,7 @@ class Deployment
         $this->connection = new Connection($server);
         
         // Check if remote path exists
-        if (!$this->connection->directoryExists('')) {
+        if (!$this->connection->directoryExists($server['path'])) {
             $this->cli->error("\r\nSERVER: " . $name);
             $this->cli->error("Remote path does not exist: " . $server['path']);
             $this->cli->info("Deployment skipped.");
